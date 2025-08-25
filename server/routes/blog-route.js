@@ -11,6 +11,6 @@ const {
 blogRouter.get("/", fetchListOfBlogs);
 blogRouter.post("/add", addNewBlog);
 blogRouter.put("/update/:id", updateABlog);
-blogRouter.delete("/delete", deleteABlog);
+blogRouter.delete("/delete/:id", deleteABlog);
 
 module.exports = blogRouter;
