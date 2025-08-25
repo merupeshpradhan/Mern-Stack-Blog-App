@@ -1,7 +1,12 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
-const GlobalContext = createContext(null);
+export const GlobalContext = createContext(null);
 
-export default function GlobalState({ childern }) {
-  return <GlobalContext.Provider>{childern}</GlobalContext.Provider>;
+export default function GlobalState({ children }) {
+  const [formData, setFormData] = useState({ title: "", description: "" });
+  return (
+    <GlobalContext.Provider value={{ formData, setFormData }}>
+      {children}
+    </GlobalContext.Provider>
+  );
 }
